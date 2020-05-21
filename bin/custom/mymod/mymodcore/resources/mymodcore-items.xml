@@ -35,6 +35,7 @@
                 <attribute qualifier="codeName" type="localized:java.lang.String">
                     <description>Code name of product</description>
                     <persistence type="property"/>
+                    <modifiers read="true" write="true" search="true"/>
                 </attribute>
             </attributes>
         </itemtype>
