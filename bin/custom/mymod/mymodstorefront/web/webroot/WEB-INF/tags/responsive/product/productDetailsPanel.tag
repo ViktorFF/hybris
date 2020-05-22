@@ -25,6 +25,7 @@
 							<product:productPricePanel product="${product}" />
 						</ycommerce:testId>
 						<div class="description">${ycommerce:sanitizeHTML(product.summary)}</div>
+						<div style="color: red;">${product.codeName}</div>
 					</div>
 				</div>
 

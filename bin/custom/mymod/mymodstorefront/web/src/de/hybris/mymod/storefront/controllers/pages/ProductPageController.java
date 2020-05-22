@@ -118,7 +118,7 @@ public class ProductPageController extends AbstractPageController
 	{
 		final String productCode = decodeWithScheme(encodedProductCode, UTF_8);
 		final List<ProductOption> extraOptions = Arrays.asList(ProductOption.VARIANT_MATRIX_BASE, ProductOption.VARIANT_MATRIX_URL,
-				ProductOption.VARIANT_MATRIX_MEDIA);
+				ProductOption.VARIANT_MATRIX_MEDIA, ProductOption.CODE_NAME);
 
 		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, extraOptions);
 

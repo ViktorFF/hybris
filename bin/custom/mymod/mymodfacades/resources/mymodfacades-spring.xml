@@ -74,6 +74,17 @@
 		<property name="genderConverter" ref="genderConverter"/>
 	</bean>
 
+	<!-- Add the productCodeNamePopulator to the DefaultModifableConfigurablePopulator -->
+	<bean id="productCodeNamePopulator" class="de.hybris.mymod.facades.populators.ProductCodeNamePopulator" parent="baseProductPopulator"/>
+
+	<bean id="productCodeNameConfiguredPopulator" parent="defaultProductConfiguredPopulator">
+		<property name="populators">
+			<map key-type="de.hybris.platform.commercefacades.product.ProductOption" merge="true">
+				<entry key="CODE_NAME" value-ref="productCodeNamePopulator"/>
+			</map>
+		</property>
+	</bean>
+
 	<!-- Add the apparelProductPopulator to the productConverter -->
 	<bean parent="modifyPopulatorList">
 		<property name="list" ref="productConverter"/>

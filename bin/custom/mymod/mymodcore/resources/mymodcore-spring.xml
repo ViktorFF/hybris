@@ -22,6 +22,9 @@
 	<bean id="acceleratorCoreSystemSetup" class="de.hybris.mymod.core.setup.CoreSystemSetup"
 	       parent="abstractCoreSystemSetup"/>
 
+	<!-- Custom modification -->
+	<bean id="mymodProductService" class="de.hybris.mymod.core.services.MymodProductService" parent="productService"/>
+
 	<!-- Solr field value providers -->
 
 	<bean id="volumeAwareProductPriceValueProvider" class="de.hybris.mymod.core.search.solrfacetsearch.provider.impl.VolumeAwareProductPriceValueProvider"  parent="abstractPropertyFieldValueProvider">
