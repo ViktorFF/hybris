@@ -77,9 +77,26 @@
 	<!-- Add the productCodeNamePopulator to the DefaultModifableConfigurablePopulator -->
 	<bean id="productCodeNamePopulator" class="de.hybris.mymod.facades.populators.ProductCodeNamePopulator" parent="baseProductPopulator"/>
 
-	<bean id="productCodeNameConfiguredPopulator" parent="defaultProductConfiguredPopulator">
+<!--	<bean id="productCodeNameConfiguredPopulator" parent="defaultProductConfiguredPopulator">-->
+<!--		<property name="populators">-->
+<!--			<map key-type="de.hybris.platform.commercefacades.product.ProductOption" merge="true">-->
+<!--				<entry key="CODE_NAME" value-ref="productCodeNamePopulator"/>-->
+<!--			</map>-->
+<!--		</property>-->
+<!--	</bean>-->
+
+	<bean id="productVariantConfiguredPopulator" parent="defaultProductConfiguredPopulator">
 		<property name="populators">
 			<map key-type="de.hybris.platform.commercefacades.product.ProductOption" merge="true">
+				<entry key="VARIANT_MATRIX" value-ref="productVariantMatrixPopulator"/>
+				<entry key="VARIANT_MATRIX_BASE" value-ref="productVariantMatrixPopulator"/>
+				<entry key="VARIANT_MATRIX_ALL_OPTIONS" value-ref="configVariantMatrixDataPopulator"/>
+				<entry key="VARIANT_MATRIX_URL" value-ref="configVariantOptionDataUrlPopulator"/>
+				<entry key="VARIANT_MATRIX_MEDIA" value-ref="configVariantOptionDataMediaPopulator"/>
+				<entry key="VARIANT_MATRIX_PRICE" value-ref="configVariantOptionDataPricePopulator"/>
+				<entry key="VARIANT_MATRIX_STOCK" value-ref="configVariantOptionDataStockPopulator"/>
+				<entry key="URL" value-ref="productUrlPopulator"/>
+				<entry key="IMAGES" value-ref="productPrimaryImagePopulator"/>
 				<entry key="CODE_NAME" value-ref="productCodeNamePopulator"/>
 			</map>
 		</property>
